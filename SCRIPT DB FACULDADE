@@ -51,10 +51,10 @@ FOREIGN KEY (fk_cod_departamento) REFERENCES departamento (cod_departamento)
 Criação Tabela professor_disciplina:
 CREATE TABLE IF NOT EXISTS professor_disciplina (
 	fk_cod_professor INT(4) NOT NULL,
-	fk_cod_departamento INT(4) NOT NULL,
-PRIMARY KEY (fk_cod_professor, fk_cod_departamento),
+	fk_cod_disciplina INT(4) NOT NULL,
+PRIMARY KEY (fk_cod_professor, fk_cod_disciplina),
 FOREIGN KEY (fk_cod_professor) REFERENCES professor (cod_professor),
-FOREIGN KEY (fk_cod_departamento) REFERENCES departamento (cod_departamento)
+FOREIGN KEY (fk_cod_disciplina) REFERENCES disciplina (cod_disciplina)
 );
 
 Criação Tabela curso:
@@ -78,8 +78,8 @@ Criação Tabela turma:
 CREATE TABLE IF NOT EXISTS turma (
 	cod_turma INT(4) PRIMARY KEY AUTO_INCREMENT,
     fk_cod_curso INT(4), 
-    periodo CHAR(8),
-    numero_aluno CHAR(4),
+    periodo CHAR(10),
+    numero_aluno INT(4),
     dt_inicio DATE,
     dt_fim DATE,
 FOREIGN KEY (fk_cod_curso) REFERENCES curso (cod_curso)
@@ -88,7 +88,7 @@ FOREIGN KEY (fk_cod_curso) REFERENCES curso (cod_curso)
 Criação Tabela endereco:
 CREATE TABLE IF NOT EXISTS endereco (
 	cod_endereco INT(4) PRIMARY KEY AUTO_INCREMENT,
-    fk_cod_tipo_logradouro INT(4) NOT NULL,
+    fk_cod_logradouro INT(4) NOT NULL,
     CEP CHAR(8) NOT NULL,
     nome_rua CHAR(50) NOT NULL,
     numero_rua INT(4) NOT NULL,
@@ -105,8 +105,7 @@ CREATE TABLE IF NOT EXISTS aluno (
     fk_cod_endereco INT(4), 
     nome CHAR(20),
     sobrenome CHAR(35),
-    CPF INT(11),
-    RG INT(15),
+    CPF CHAR(15),
     status BOOLEAN,
     sexo CHAR(1),
     nome_pai CHAR(50),

@@ -1,0 +1,351 @@
+Incluindo Registros Tabela departamento:
+INSERT INTO departamento
+		(cod_departamento, nome_departamento)
+VALUE
+	('1', 'Ciências Humanas'),
+	('2', 'Matemática'),
+	('3', 'Biologia'),
+	('4', 'Estágio'),
+	('5', 'tecno da informação'),
+	('6', 'Quimica'),
+	('7', 'Arte');
+
+Incluindo Registros Tabela curso:
+INSERT INTO curso
+	(fk_cod_departamento, nome)
+VALUE 
+	('1', 'Jornalismo'),
+    ('1', 'Direito'),
+    ('1', 'Psicologia'),
+    ('1', 'Historia'),
+    ('2', 'Cálculo I.'),
+    ('2', 'Álgebra Linear'),
+    ('2', 'Série Fibonacci'),
+    ('2', 'Matemática'),
+    ('3', 'Zootecnia'),
+    ('3', 'Biomedicina'),
+    ('3', 'Biotecnologia'),
+    ('3', 'Biologia'),
+    ('4', 'Direito'),
+    ('4', 'Pedagogia'),
+    ('4', 'Administração'),
+    ('4', 'Engenharia eletrica'),
+    ('5', 'Engenharia software'),
+    ('5', 'Analise de sistemas');
+
+Incluindo Registros Tabela turma:
+INSERT INTO turma
+	(fk_cod_curso, Periodo, numero_aluno, dt_inicio, dt_fim)
+VALUE 
+	('15', 'Matutino', '15', '2022-06-12', '2025-06-12'),
+    ('15', 'Vespertino', '20', '2022-06-12', '2025-06-12'),
+    ('15', 'Noturno', '17', '2022-06-12', '2025-06-12'),
+    ('16', 'Matutino', '23', '2022-06-10', '2027-06-10'),
+    ('16', 'Vespertino', '15', '2022-06-10', '2027-06-10'),
+    ('16', 'Noturno', '25', '2022-06-10', '2027-06-10'),
+    ('17', 'Matutino', '20', '2022-06-12', '2027-06-12'),
+    ('23', 'Vespertino', '15', '2022-06-12', '2024-06-12');
+
+Incluindo Registros Tabela tipo_logradouro:
+INSERT INTO tipo_logradouro 
+	(tipo_logradouro)
+VALUE 
+	('Bairro'),
+    ('Rua'),
+    ('Quadra'),
+    ('Avenida'),
+    ('Instancia');
+
+Incluindo Registros Tabela endereco:
+INSERT INTO endereco
+	(fk_cod_logradouro, CEP, nome_rua, numero_rua, bairro, complemento)
+VALUE 
+	('1', '13165-000', 'Chepa', '420', 'Lombra', 'Conjunto Fome'),
+    ('2', '15435-030', 'Macaco', '22', 'Maluco', ' Conjunto Manicomio'),
+    ('3', '14545-055', 'Medeiros', '68', 'Brativa', 'Conjunto Osvaldo'),
+    ('3', '14545-055', 'Medeiros', '42', 'BAllentins', 'Conjunto Abilho'),
+    ('4', '15423-324', 'Primaveira', '54', 'Setor c', 'Conjunto Mamaco'),
+    ('5', '21343-675', 'Falastrone', '87', 'Setor O', 'Quadra 4'),
+	('1', '13165-000', 'Chepa', '420', 'Lombra', 'Conjunto Fome'),
+    ('2', '15435-030', 'Macaco', '22', 'Maluco', ' Conjunto Manicomio'),
+    ('3', '14545-055', 'Medeiros', '68', 'Brativa', 'Conjunto Osvaldo'),
+    ('4', '14545-055', 'Medeiros', '42', 'BAllentins', 'Conjunto Abilho'),
+    ('5', '15423-324', 'Primaveira', '54', 'Setor c', 'Conjunto Mamaco'),
+    ('1', '21343-675', 'Falastrone', '87', 'Setor O', 'Quadra 4'),
+	('2', '13165-000', 'Chepa', '420', 'Lombra', 'Conjunto Fome'),
+    ('3', '15435-030', 'Macaco', '22', 'Maluco', ' Conjunto Manicomio'),
+    ('4', '14545-055', 'Medeiros', '68', 'Brativa', 'Conjunto Osvaldo'),
+    ('5', '14545-055', 'Medeiros', '42', 'BAllentins', 'Conjunto Abilho'),
+    ('1', '15423-324', 'Primaveira', '54', 'Setor c', 'Conjunto Mamaco'),
+    ('2', '21343-675', 'Falastrone', '87', 'Setor O', 'Quadra 4'),
+	('3', '13165-000', 'Chepa', '420', 'Lombra', 'Conjunto Fome'),
+    ('4', '15435-030', 'Macaco', '22', 'Maluco', ' Conjunto Manicomio');
+    
+Incluindo Registros Tabela aluno:
+INSERT INTO aluno 
+	(fk_cod_curso, fk_cod_turma, fk_cod_endereco, nome, sobrenome, CPF, status, sexo, nome_pai, nome_mae, whatsapp, email)
+VALUE 
+	('15', '2', '1', 'Bruno', 'Carlito teves', '43324453422', '1', 'M', 'Romeu Teves Silveira', 'Silvinha Carlito', '+55 61 94553_3424', 'BrunoCarlito@gmail.com'),
+    (NULL, '1', '2', 'Bartolomeu', 'Baloteli Virjão da Silva', '23443503423', '1', 'M', 'Aristeu Apostofe Silva', 'Clemeia Virjão Meneses', '+55 61 98745_3985', 'BartolomeuBitelo@gmail.com'),
+	('16', '2', '3', 'Carlos', 'Pc gamer da Silva', '34245325254', '1', 'M', 'Carlinhos Pc Gamer', 'Lefina Andrade da Silva', '+55 61 93452_3564', 'CarlosPcGamer@gmail.com'),
+    ('16', '2', '4', 'Alberto', 'Sousa Gadelha', '05343343534', '1', 'M', 'Bino Sousa', 'Frida kalo Gadelha', '+55 62 93421_3324', 'AlbertoGadelha@gmail.com'),
+	(NULL, '4', '5', 'Antonia', 'Beira Pigarro', '07743288743', '0', 'F', 'Gustavo Beira', 'Maria Pigarro', '+55 62 98754_5456', 'AntoniaPigarro@gmail.com'),
+    ('24', '4', '6', 'Chatobrian', 'Bilabong Pinheiros', '04405634543', '1', 'F', 'Aristeu Bilabong', 'Cintia Pinheiros', '+55 61 93422_4533', 'Chatobrian@gmail.com'),
+	('25', '4', '6', 'Bart', 'Barros no Coll', '43455212211', '0', 'M', 'Carlinho Barros', 'Lefeina no Coll', '+55 61 92345_6464', 'Bart2342@gmail.com'),
+    ('26', '4', '7', 'Alberto', 'Meireles Guedes ', '05366343534', '1', 'M', 'Vinicios Meireles', 'Alana Guedes', '+55 62 92343_2342', 'AlbertoMeireles@gmail.com'),
+    ('27', '5', '8', 'Bruno', 'Carlito teves', '43324453422', '1', 'M', 'Romeu Teves Silveira', 'Silvinha Carlito', '+55 61 94553_3424', 'BrunoCarlito@gmail.com'),
+    ('28', '6', '9', 'Bartolomeu', 'Baloteli Virjão da Silva', '23443503423', '1', 'M', 'Aristeu Apostofe Silva', 'Clemeia Virjão Meneses', '+55 61 98494_3455', 'BartolomeuBitelo@gmail.com'),
+	('29', '7', '10', 'Carlos', 'Pc gamer da Silva', '34536463467', '1', 'M', 'Carlinhos Pc Gamer', 'Lefina Andrade da Silva', '+55 61 98874_8994', 'Carlos3342@gmail.com'),
+    ('30', '8', '15', 'Alberto', 'Sousa Gadelha', '05345677354', '1', 'M', 'Lourenço Sousa', 'Armera Gadelha', '+55 62 96744_3742', 'Alberto3543@gmail.com'),
+	('23', '4', '12', 'Antonia', 'Beira Pigarro', '07743288743', '0', 'F', 'Gustavo Beira', 'Maria Pigarro', '+55 62 96544_0785', 'AntoniaPigarro@gmail.com'),
+    ('24', '4', '13', 'Chatobrian', 'Bilabong Pinheiros', '04405634543', '1', 'F', 'Aristeu Bilabong', 'Cintia Pinheiros', '+55 61 99843_2423', 'Chatobrian@gmail.com'),
+	('25', '4', '11', 'Bart', 'Barros no Coll', '43455212211', '0', 'M', 'Carlinho Barros', 'Lefeina no Coll', '+55 61 92345_6464', 'Bart2342@gmail.com'),
+    (NULL, '4', '19', 'Alberto', 'Meireles Guedes ', '05366343534', '1', 'M', 'Vinicios Meireles', 'Alana Guedes', '+55 62 92343_2342', 'AlbertoMeireles@gmail.com'),
+    ('27', '5', '17', 'Bruno', 'Carlito teves', '43324453422', '1', 'M', 'Romeu Teves Silveira', 'Silvinha Carlito', '+55 61 94553_3424', 'BrunoCarlito@gmail.com'),
+    ('28', '6', '18', 'Bartolomeu', 'Baloteli Virjão da Silva', '23443503423', '1', 'M', 'Aristeu Apostofe Silva', 'Clemeia Virjão Meneses', '+55 61 98540_3940', 'BartolomeuBitelo@gmail.com'),
+	('29', '7', '16', 'Carlos', 'Pc gamer da Silva', '34536463467', '1', 'M', 'Carlinhos Pc Gamer', 'Lefina Andrade da Silva', '+55 61 98874_8994', 'Carlos3342@gmail.com'),
+    ('30', '8', '14', 'Alberto', 'Sousa Gadelha', '05345677354', '1', 'M', 'Lourenço Sousa', 'Armera Gadelha', '+55 62 93422_4342', 'Alberto3543@gmail.com');
+
+Incluindo Registros Tabela tipo_telefone:
+INSERT INTO tipo_telefone
+	(cod_tipo_telefone, tipo_telefone)
+VALUE 
+	('1', 'celular'),
+    ('2', 'Residencial'),
+    ('3', 'Comercial');
+
+Incluindo Registros Tabela telefone:
+INSERT INTO telefone
+	(fk_cod_tipo_telefone, numero)
+VALUE 
+	('3', '+55 61 98673-4353'),
+    ('2', '+55 61 98745_3985'),
+    ('1', '+55 61 94553_3424'),
+    ('2', '+55 61 94553_3424'),
+    ('3', '+55 61 94553_3424'),
+	('1', '+55 62 98754_5456'),
+    ('2', '+55 62 98754_5456'),
+    ('3', '+55 62 98754_5456'),
+    ('1', '+55 61 94553_3424'),
+    ('2', '+55 61 94553_3424'),
+    ('3', '+55 61 94553_3424'),
+    ('2', '+55 62 96744_3742'),
+    ('1', '+55 62 96544_0785'),
+    ('2', '+55 61 99843_2423'),
+    ('3', '+55 61 98673-4353'),
+	('2', '+55 61 98673-4353'),
+    ('1', '+55 61 99435-4653'),
+    ('2', '+55 61 98540_3940'),
+    ('3', '+55 61 98654-4345'),
+    ('2', '+55 61 97643-4883');
+
+Incluindo Registros Tabela telefone_aluno
+INSERT INTO telefone_aluno
+	(fk_RA_aluno, fk_cod_telefone)
+VALUE 
+	('1', '3'),
+    ('1', '4'),
+    ('1', '5'),
+    ('5', '6'),
+    ('5','7'),
+    ('5', '8'),
+    ('9', '9'),
+    ('9', '10'),
+    ('9', '11'),
+    ('2', '2'),
+    ('12', '12'),
+    ('13', '13'),
+    ('14', '14'),
+    ('18', '18'), 
+    ('3', NULL),
+    ('4', '16'),
+    ('6', '17'),
+    ('7', '15'),
+    ('8', NULL),
+    ('9', '19'),
+    ('10', '1'),
+    ('11', NULL),
+    ('15', NULL),
+    ('16', '20'),
+    ('17', NULL),
+    ('19', NULL),
+    ('20', NULL);
+
+Incluindo Registros Tabela disciplina:
+INSERT INTO disciplina
+	(fk_cod_departamento, nome, carga_horaria, descricao, numero_aluno)
+VALUE 
+	('2', 'Raciocinio Logico', '40', 'Papapa Papapimba', '15'),
+    ('1', 'Psicologia Cognitiva', '40', 'Papapa Papapimba', '20'),
+    ('2', 'Eletronica Digital', '40', 'Papapa Papapimba', '15'),
+    ('5', 'Programacao com C', '40', 'Papapa Papapimba', '25'),
+    ('2', 'logica basica', '40', 'Papapa Papapimba', '15'),
+    ('7', 'Arte Visual', '40', 'Papapa Papapimba', '10'),
+    ('3', 'Anatomia Animal', '120', 'Papapa Papapimba', '15'),
+    ('3', 'Anatomia Comparada', '100', 'Papapa Papapimba', '15'),
+    ('3', 'Botanica', '80', 'Papapa Papapimba', '20'),
+    ('3', 'Morfologia', '70', 'Papapa Papapimba', '15'),
+    ('3', 'Genetica', '60', 'Papapa Papapimba', '25'),
+    ('6', 'Quimica Inorganica', '40', 'Papapa Papapimba', '20'),
+    ('6', 'Quimica Organica', '40', 'Papapa Papapimba', '20'),
+    ('6', 'Bioquimica', '40', 'Papapa Papapimba', '20'),
+    ('6', 'Fisico Quimica', '80', 'Papapa Papapimba', '20'),
+    ('6', 'Qmc Analitica', '80', 'Papapa Papapimba', '20'),
+    ('7', 'Artes Cenicas', '40', 'Papapa Papapimba', '10'),
+    ('7', 'Artes Plasticas', '40', 'Papapa Papapimba', '15'),
+    ('7', 'Artes Visuais', '40', 'Papapa Papapimba', '10'),
+    ('7', 'Historia da Arte', '20', 'Papapa Papapimba', '15'),
+    ('7', 'Arquitetura Urban', '40', 'Papapa Papapimba', '20'),
+    ('2', 'Elementos da Matema', '35', 'Papapa Papapimba', '25'),
+    ('2', 'Fundamentos Matema', '35', 'Papapa Papapimba', '25'),
+    ('2', 'Geometria Analitica', '35', 'Papapa Papapimba', '25'),
+    ('2', 'Algebra Linear', '35', 'Papapa Papapimba', '25'),
+    ('2', 'Analise Qttv', '35', 'Papapa Papapimba', '25'),
+    ('2', 'Eqcs Diferenciais', '35', 'Papapa Papapimba', '25'),
+    ('1', 'Filosofia', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Sociologia', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Historia', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Geografia', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Letras', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Teologia', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Antropologia', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Comunicacao', '40', 'Papapa Papapimba', '35'),
+    ('1', 'Linguistica', '40', 'Papapa Papapimba', '35'),
+    ('4', 'Tecno Adm', '80', 'Papapa Papapimba', '35'),
+    ('4', 'Junior DBA', '40', 'Papapa Papapimba', '30'),
+	('4', 'Enfermagem', '40', 'Papapa Papapimba', '20'),
+	('4', 'Auxiliar Estoque', '40', 'Papapa Papapimba', '25'),
+	('5', 'Aqttr de Redes', '40', 'Papapa Papapimba', '15'),
+	('5', 'Egnhria de Softwares', '80', 'Papapa Papapimba', '25'),
+	('5', 'DBA', '100', 'Papapa Papapimba', '30');
+
+Incluindo Registros Tabela professor:
+INSERT INTO professor 
+	(fk_cod_departamento, nome, sobrenome, status)
+VALUE 
+	('1', 'Hipocrates', 'Socadotes da Silva', '1'),
+    ('2', 'Jailson', 'Cardoso Malote', '1'),
+    ('1', 'Fernando', 'Mamaco Filamento', '0'),
+    ('4', 'Jairo', 'Boitamagro', '0'),
+    ('4', 'Fatima', 'Nascimento Bezerra', '1'),
+	(NULL, 'Sandro', 'Marinha Silveira', '0'),
+    ('5', 'Carlos', 'Almeida Defante', '1'),
+    ('1', 'Albilho', 'Carvalho Spindola', '1'),
+    (NULL, 'Bolso', 'Magro', '0'),
+    ('3', 'Carlinha', 'da LockPick', '1'),
+    ('7', 'Fernanda', ' Assis Machado', '1'),
+	(NULL, 'Irineu', 'Voçe não sabe nem eu', '0'),
+    ('3', 'Alberto', 'Fila Preferencial', '1'),
+    ('6', 'Cicilio', 'Do Civic', '0'),
+    ('4', 'Cintia', 'Macaxeira', '0'),
+    ('2', 'Filiciano', 'Passado', '1');
+
+Incluindo Registros Tabela professor_disciplina:
+INSERT INTO professor_disciplina
+	(fk_cod_professor, fk_cod_disciplina)
+VALUE
+	('1','221'),
+    ('2','217'),
+    ('3','218'),
+    ('7','219'),
+    ('7','220'),
+	('11','223'),
+    ('12','224'),
+    ('12','225'),
+    ('13','226'),
+    ('13','227'),
+    ('14','228'),
+    ('14','229'),
+    ('14','230'),
+    ('14','231'),
+    ('14','232'),
+    ('11','233'),
+    ('11','234'),
+    ('11','235'),
+    ('11','236'),
+    ('11','237'),
+    ('16','238'),
+    ('2','239'),
+    ('16','240'),
+    ('16','241'),
+    ('2','242'),
+    ('16','243'),
+    ('1','244'),
+    ('1','245'),
+    ('1','246'),
+    ('3','247'),
+    ('3','248'),
+    ('3','249'),
+    ('8','250'),
+    ('8','251'),
+    ('8','252'),
+    ('8','253');
+
+Incluindo Registros Tabela curso_disciplina:
+INSERT INTO curso_disciplina
+	(fk_cod_curso, fk_cod_disciplina)
+VALUE 
+	('15','218'),
+    ('16','244'),
+    ('17','245'),
+    ('18','246'),
+    ('19','217'),
+    ('20','219'),
+    ('21','221'),
+    ('22','239'),
+    ('23','223'),
+    ('24','224'),
+    ('25','225'),
+    ('26','226'),
+    ('27','253'),
+    ('28','254'),
+    ('29','255'),
+    ('30','256'),
+    ('31','220'),
+    ('32','259');
+
+Incluindo Registros Tabela historico:
+INSERT INTO historico
+	(fk_RA_aluno, dt_inicio, dt_fim)
+VALUE
+	('1','2022-05-12','2025-06-12'),
+    ('3','2022-05-12','2025-06-12'),
+    ('4','2022-05-12','2025-06-12'),
+    ('6','2022-05-10','2027-06-10'),
+    ('7','2022-05-10','2027-06-10'),
+    ('8','2022-05-10','2027-06-10'),
+    ('9','2022-05-12','2026-06-12'),
+    ('10','2022-05-12','2026-06-12'),
+    ('11','2022-05-12','2026-06-12'),
+    ('12','2022-05-10','2024-06-10'),
+    ('13','2022-05-10','2024-06-10'),
+    ('14','2022-05-10','2024-06-10'),
+    ('15','2022-05-12','2027-06-12'),
+    ('17','2022-05-12','2027-06-12'),
+    ('18','2022-05-12','2027-06-12'),
+    ('19','2022-05-10','2025-06-10'),
+    ('20','2022-05-10','2025-06-10');
+
+Incluindo Registros Tabela disciplina_historico:
+INSERT INTO disciplina_historico
+	(fk_cod_disciplina, fk_cod_historico, nota, media, frequencia)
+VALUE 
+	('217','1','0.0','0.0','0'),
+    ('218','2','0.0','0.0','0'),
+    ('219','3','0.0','0.0','0'),
+    ('220','4','0.0','0.0','0'),
+    ('221','5','0.0','0.0','0'),
+    ('223','6','0.0','0.0','0'),
+    ('224','7','0.0','0.0','0'),
+    ('225','8','0.0','0.0','0'),
+    ('226','9','0.0','0.0','0'),
+    ('239','10','0.0','0.0','0'),
+    ('244','11','0.0','0.0','0'),
+    ('245','12','0.0','0.0','0'),
+    ('246','13','0.0','0.0','0'),
+    ('253','14','0.0','0.0','0'),
+    ('254','15','0.0','0.0','0'),
+    ('255','16','0.0','0.0','0'),
+    ('259','17','0.0','0.0','0');
+
+

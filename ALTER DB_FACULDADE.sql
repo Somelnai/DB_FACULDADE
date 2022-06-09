@@ -70,3 +70,13 @@ CHANGE fk_RA_aluno fk_RA_aluno INT(4) NOT NULL;
 Alteração tabela disciplina_historico:
 ALTER TABLE disciplina_historico CHANGE fk_cod_disciplina fk_cod_disciplina INT(4) NOT NULL,
 CHANGE fk_cod_historico fk_cod_historico INT(4) NOT NULL;
+
+Alteração tabela aluno:
+ALTER TABLE aluno CHANGE CPF CPF CHAR(15);
+ALTER TABLE aluno DROP RG;
+
+Alteração tabela tipo_telefone:
+ALTER TABLE tipo_telefone CHANGE tipo_telefone tipo_telefone CHAR(11);
+ 
+Tabela dropada para alteração:
+DROP TABLE professor_disciplina;
