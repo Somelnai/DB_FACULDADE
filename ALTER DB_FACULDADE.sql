@@ -1,4 +1,3 @@
-
 Alteração tabela departamento:
 ALTER TABLE departamento CHANGE nome_departamento nome_departamento CHAR(20) NOT NULL,
 CHANGE cod_departamento cod_departamento INT(4) AUTO_INCREMENT;
@@ -34,13 +33,13 @@ CHANGE fk_cod_discIplina fk_cod_disciplina INT(4) NOT NULL;
 Alteração tabela turma:
 ALTER TABLE turma CHANGE cod_turma cod_turma INT(4) AUTO_INCREMENT,
 CHANGE fk_cod_curso fk_cod_curso INT(4),
-CHANGE periodo periodo CHAR(8),
+CHANGE periodo periodo CHAR(10),
 CHANGE numero_aluno numero_aluno CHAR(4); 
 
 Alteração tabela endereco:
 ALTER TABLE endereco CHANGE cod_endereco cod_endereco INT(4) AUTO_INCREMENT,
 CHANGE fk_cod_tipo_logradouro fk_cod_tipo_logradouro INT(4) NOT NULL,
-CHANGE CEP CEP CHAR(8) NOT NULL,
+CHANGE CEP CEP CHAR(9) NOT NULL,
 CHANGE nome_rua nome_rua CHAR(50) NOT NULL,
 CHANGE  numero_rua numero_rua INT(4) NOT NULL,
 CHANGE bairro bairro CHAR(20) NOT NULL,
